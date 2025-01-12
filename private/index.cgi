@@ -17,6 +17,7 @@ print "Content-type: text/html", "\n\n";
 # HTML-Ausgabe
 print "<html><head></head><body>\n";
 print "<font size=+1>Environment</font><br/>\n";
+print "<a href='/mellon/logout?ReturnTo=/'>Logout</a><br/>\n";
 
 # Schleife durch Umgebungsvariablen
 foreach my $key (sort keys %ENV) {
