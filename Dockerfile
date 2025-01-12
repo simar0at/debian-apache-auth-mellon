@@ -12,7 +12,8 @@ RUN apt-get update && apt-get -y full-upgrade && \
     apt-get install -y \
 	apache2 apache2-data \
 	libapache2-mod-auth-mellon && \
-	a2enmod auth_mellon && a2enmod proxy && \
+	a2enmod auth_mellon && a2enmod proxy && a2enmod proxy_ajp && \
+	a2enmod proxy_http && a2enmod proxy_http2 && a2enmod proxy_fcgi && \
 	mkdir -p /run/apache2 && chown -R www-data:www-data /run/apache2 && \
 	ln -s /proc/self/fd/1 $APACHE_LOG_DIR/error.log && \
 	ln -s /proc/self/fd/1 $APACHE_LOG_DIR/access.log
