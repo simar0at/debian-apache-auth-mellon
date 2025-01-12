@@ -11,8 +11,8 @@ ENV DEBIAN_FRONTEND=noninteractive \
 RUN apt-get update && apt-get -y full-upgrade && \
     apt-get install -y \
 	apache2 apache2-data \
-	libapache2-mod-auth-mellon &&\
-	a2enmod auth_mellon && \
+	libapache2-mod-auth-mellon && \
+	a2enmod auth_mellon && a2enmod proxy && \
 	mkdir -p /run/apache2 && chown -R www-data:www-data /run/apache2 && \
 	ln -s /proc/self/fd/1 $APACHE_LOG_DIR/error.log && \
 	ln -s /proc/self/fd/1 $APACHE_LOG_DIR/access.log
